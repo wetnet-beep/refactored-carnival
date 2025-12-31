@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Slab', serif;
+    background: linear-gradient(-45deg, #0c2461, #1e3799, #4a69bd, #6a89cc);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    background-color: rgba(0, 0, 20, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+header h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #FFD700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+}
+
+header h1 i {
+    color: #FF6347;
+    margin: 0 15px;
+    animation: pulse 2s infinite;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+    color: #dfe6e9;
+    opacity: 0.9;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 50px 0;
+}
+
+.time-block {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 30px 20px;
+    min-width: 140px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.time-block:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.number {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4.5rem;
+    font-weight: bold;
+    line-height: 1;
+    color: #00FFEF;
+    text-shadow: 0 0 15px rgba(0, 255, 239, 0.7);
+    margin-bottom: 10px;
+}
+
+.label {
+    font-size: 1.5rem;
+    color: #FFD700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.separator {
+    font-size: 4rem;
+    color: #FFD700;
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.new-year-image {
+    margin: 40px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 800px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border: 5px solid rgba(255, 255, 255, 0.1);
+}
+
+.new-year-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.new-year-image img:hover {
+    transform: scale(1.02);
+}
+
+.message {
+    font-size: 2.2rem;
+    margin: 40px 0;
+    padding: 25px;
+    background: linear-gradient(to right, #FF416C, #FF4B2B);
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    animation: colorShift 5s infinite alternate;
+}
+
+@keyframes colorShift {
+    0% { background: linear-gradient(to right, #FF416C, #FF4B2B); }
+    100% { background: linear-gradient(to right, #4A00E0, #8E2DE2); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.fireworks {
+    font-size: 3.5rem;
+    margin: 30px 0;
+    letter-spacing: 20px;
+    color: #FFD700;
+    animation: fireworks 1.5s infinite alternate;
+}
+
+@keyframes fireworks {
+    from { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #FFD700, 0 0 20px #FFD700; }
+    to { text-shadow: 0 0 10px #fff, 0 0 20px #FF6347, 0 0 30px #FF6347, 0 0 40px #FF6347; }
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 1rem;
+    color: #aaa;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+.github-link a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.github-link a:hover {
+    color: #00FFEF;
+    text-decoration: underline;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+    header h1 {
+        font-size: 2.2rem;
+    }
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    .countdown-container {
+        gap: 10px;
+    }
+    .time-block {
+        min-width: 100px;
+        padding: 20px 10px;
+    }
+    .number {
+        font-size: 3rem;
+    }
+    .label {
+        font-size: 1rem;
+    }
+    .separator {
+        font-size: 2.5rem;
+    }
+    .message {
+        font-size: 1.7rem;
+        padding: 15px;
+    }
+    .fireworks {
+        font-size: 2.5rem;
+        letter-spacing: 10px;
+    }
+  }
